@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  img-url: MyString
+  description: MyString
+  pets-allowed: MyString
+  air-conditioning: MyString
+  guests: MyString
+  bedrooms: MyString
+  beds: MyString
+  baths: MyString
+  kitchen: MyString
+  wifi: MyString
+
+two:
+  title: MyString
+  img-url: MyString
+  description: MyString
+  pets-allowed: MyString
+  air-conditioning: MyString
+  guests: MyString
+  bedrooms: MyString
+  beds: MyString
+  baths: MyString
+  kitchen: MyString
+  wifi: MyString
