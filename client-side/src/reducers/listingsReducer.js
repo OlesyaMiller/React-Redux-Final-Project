@@ -9,7 +9,7 @@ export default function listingsReducer(state = {listings: []}, action) {
         }
         case 'ADD_LISTING':
             console.log("action", action)
-            const listing = {
+            const listing = action.listing
                 // id: cuid(),
                 // // id: action.id,
                 // title: action.title,
@@ -24,7 +24,7 @@ export default function listingsReducer(state = {listings: []}, action) {
                 // kitchen: action.kitchen,
                 // wifi: action.wifi,
                 // location: action.location
-            }
+            
             return { ...state, listings: state.listings.concat(listing) };
         default:
         return state;
