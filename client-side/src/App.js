@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchListings } from './actions/ListingAction'
 import ListingContainer from './containers/ListingContainer';
+import Navbar from './components/listings/Navbar'
+import Home from './components/listings/Home'
+import About from './components/listings/About'
 
 class App extends Component {
 
@@ -12,8 +16,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        App component
-        <ListingContainer />
+        <Router>
+            <div className="routes">
+                <Navbar />
+                  <Switch>
+                    <Route exact path="/" component={ListingContainer} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/about" component={About} />
+                  </Switch>
+            </div>
+        </Router>
+        {/* <ListingContainer /> */}
       </div>
     );
   }
