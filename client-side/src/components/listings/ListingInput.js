@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { addListing } from '../actions/ListingAction';
-import { fetchLocations } from '../actions/LocationAction';
+import { addListing } from '../../actions/ListingAction';
+import { fetchLocations } from '../../actions/LocationAction';
 import { connect } from 'react-redux';
 
 class ListingInput extends Component {
     state = {
         title: "",
         description: "",
-        petsAllowed: "",
+        pets_allowed: "",
         imgUrl: "",
         airConditioning: "",
         guests: "",
@@ -64,9 +64,9 @@ class ListingInput extends Component {
                         <option value='false' name="kitchen">No</option>
                     </select>
                     <label>Location:</label>
-                    {/* <select onChange={this.handleOnChange}>
+                    <select onChange={this.handleOnChange}>
                         <option value='1' name="location">San Juan</option>
-                    </select> */}
+                    </select>
                     <label>Image url:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.imgUrl} name="imgUrl"/>
                     <label>Number of guests:</label>
@@ -77,9 +77,9 @@ class ListingInput extends Component {
                     <input type="text" onChange={this.handleOnChange} value={this.state.beds} name="beds"/>
                     <label>Number of baths:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.baths} name="baths"/>
-                    <select onChange={this.handleOnChange}>
+                    {/* <select onChange={this.handleOnChange}>
                         {this.fetchLocations.map(location => {return <option value={location.id} name="location">{location.name}</option>})}
-                    </select>
+                    </select> */}
                     <input type="submit" value="Submit"/>
                 </form>
             </div>

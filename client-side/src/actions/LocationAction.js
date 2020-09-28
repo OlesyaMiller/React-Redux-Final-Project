@@ -4,7 +4,7 @@ export const fetchLocations = () => {
             return response.json()
         }).then(data => {
             console.log(data, 'location data')
-            dispatch({ type: 'FETCH_LOCATIONS', location: data })
+            dispatch({ type: 'FETCH_LOCATIONS', locations: data })
         })
     }
 }

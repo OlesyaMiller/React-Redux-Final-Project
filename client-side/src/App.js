@@ -26,7 +26,7 @@ class App extends Component {
                   </Switch>
             </div>
         </Router>
-        {/* <ListingContainer /> */}
+        <ListingContainer />
       </div>
     );
   }

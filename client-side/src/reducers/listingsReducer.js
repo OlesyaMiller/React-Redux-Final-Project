@@ -7,6 +7,11 @@ export default function listingsReducer(state = {listings: []}, action) {
           ...state,
           listings: action.listings
         }
+        case 'FETCH_LOCATIONS':
+        return {
+          ...state,
+          locations: action.locations
+        }
         case 'ADD_LISTING':
             console.log("action", action)
             const listing = action.listing
