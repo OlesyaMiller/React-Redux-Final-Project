@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchListings } from './actions/ListingAction'
 import ListingContainer from './containers/ListingContainer';
-import Navbar from './components/listings/Navbar'
-import Home from './components/listings/Home'
-import About from './components/listings/About'
+import Navbar from './components/nav/Navbar'
+import Home from './components/nav/Home'
+import About from './components/nav/About'
 
 class App extends Component {
 
