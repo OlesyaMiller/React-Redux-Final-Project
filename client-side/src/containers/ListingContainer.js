@@ -5,7 +5,7 @@ import ListingInput from '../components/listings/ListingInput';
 
 class ListingContainer extends Component {
     render() {
-        console.log(this.props.listings, 'listings props')
+        console.log(this.props.listings, 'listings container')
         return (
             <div>
                 <ListingInput />

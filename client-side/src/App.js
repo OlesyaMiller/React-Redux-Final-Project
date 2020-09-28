@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <Router>
             <div className="routes">
-                <Navbar />
+                  <Navbar />
                   <Switch>
                     <Route exact path="/" component={ListingContainer} />
                     <Route path="/home" component={Home} />
