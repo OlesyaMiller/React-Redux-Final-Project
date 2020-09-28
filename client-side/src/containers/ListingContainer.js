@@ -8,7 +8,7 @@ class ListingContainer extends Component {
         console.log(this.props.listings, 'listings props')
         return (
             <div>
-                <ListingInput />
+                {/* <ListingInput /> */}
                 <Listings listings={this.props.listings} />
             </div>
         );
