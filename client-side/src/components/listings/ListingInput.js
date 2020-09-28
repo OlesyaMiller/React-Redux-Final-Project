@@ -16,7 +16,11 @@ class ListingInput extends Component {
         baths: "",
         kitchen: "",
         wifi: "",
-        location: ""
+        location_id: ""
+    }
+
+    componentDidMount() {
+        this.props.fetchLocations()
     }
 
     handleOnChange = (event) => {
@@ -64,9 +68,9 @@ class ListingInput extends Component {
                         <option value='false' name="kitchen">No</option>
                     </select>
                     <label>Location:</label>
-                    {/* <select onChange={this.handleOnChange}>
-                        <option value='1' name="location">San Juan</option>
-                    </select> */}
+                    <select onChange={this.handleOnChange}>
+                        <option value='1' name="location_id">San Juan</option>
+                    </select>
                     <label>Image url:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.imgUrl} name="imgUrl"/>
                     <label>Number of guests:</label>
@@ -78,7 +82,7 @@ class ListingInput extends Component {
                     <label>Number of baths:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.baths} name="baths"/>
                     <select onChange={this.handleOnChange}>
-                        {this.fetchLocations.map(location => {return <option value={location.id} name="location">{location.name}</option>})}
+                        {this.props.locations.map(location => {return <option value={location.id} name="location">{location.name}</option>})}
                     </select>
                     <input type="submit" value="Submit"/>
                 </form>
@@ -87,4 +91,10 @@ class ListingInput extends Component {
     }
 }
 
-export default connect(null, { addListing, fetchLocations })(ListingInput);
+const mapStateToProps = state => {
+    return {
+      locations: state.locations
+    }
+}
+
+export default connect(mapStateToProps, { addListing, fetchLocations })(ListingInput);

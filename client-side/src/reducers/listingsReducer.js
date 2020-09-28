@@ -6,7 +6,6 @@ export const listingsReducer = (state = [], action) => {
             return action.listings
         case 'ADD_LISTING':
             console.log("action", action)
-            const listing = action.listing
                 // id: cuid(),
                 // // id: action.id,
                 // title: action.title,
@@ -22,7 +21,7 @@ export const listingsReducer = (state = [], action) => {
                 // wifi: action.wifi,
                 // location: action.location
             
-            return { ...state, listings: state.listings.concat(listing) };
+            return state.concat(action.listing)
         default:
         return state;
     }

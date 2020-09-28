@@ -2,11 +2,8 @@
 export const locationsReducer = (state = [], action) => {    
     switch (action.type) {
         case 'FETCH_LOCATIONS':
-        return {
-          ...state,
-          locations: action.locations
-        }
+            return action.locations
         default:
-        return state;
+            return state;
     }
 }
