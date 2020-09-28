@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { addListing } from '../../actions/ListingAction';
-import { fetchLocations } from '../../actions/LocationAction';
+import { addListing } from '../../actions/ListingsActions';
+import { fetchLocations } from '../../actions/LocationsActions';
 import { connect } from 'react-redux';
 
 class ListingInput extends Component {

@@ -1,6 +1,6 @@
 // import cuid from 'cuid';
 
-export default function listingsReducer(state = {listings: []}, action) {
+export const listingsReducer = (state = {listings: []}, action) => {
     switch (action.type) {
         case 'FETCH_LISTINGS':
         return {

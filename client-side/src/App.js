@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchListings } from './actions/ListingAction'
+import { fetchListings } from './actions/ListingsActions'
 import ListingContainer from './containers/ListingContainer';
 import Navbar from './components/nav/Navbar'
 import Home from './components/nav/Home'

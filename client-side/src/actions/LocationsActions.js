@@ -3,7 +3,7 @@ export const fetchLocations = () => {
         fetch('http://localhost:3000/locations').then(response => {
             return response.json()
         }).then(data => {
-            console.log(data, 'location data')
+            console.log(data, 'location data'),
             dispatch({ type: 'FETCH_LOCATIONS', locations: data })
         })
     }

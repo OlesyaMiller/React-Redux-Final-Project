@@ -1,4 +1,5 @@
-export default function locationsReducer(state = {locations: []}, action) {
+// export default function locationsReducer(state = {locations: []}, action) {
+export const locationsReducer = (state = {locations: []}, action) => {    
     switch (action.type) {
         case 'FETCH_LOCATIONS':
         return {
