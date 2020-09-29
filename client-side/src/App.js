@@ -6,6 +6,9 @@ import ListingContainer from './containers/ListingContainer';
 import Navbar from './components/nav/Navbar'
 import Home from './components/nav/Home'
 import About from './components/nav/About'
+import ListingInput2 from './components/listings/ListingInput2'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
 
 class App extends Component {
 
@@ -16,17 +19,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-            <div className="routes">
-                  <Navbar />
-                  <Switch>
-                      <Route exact path="/" component={ListingContainer} />
-                      <Route path="/home" component={Home} />
-                      <Route path="/about" component={About} />
-                      <Route path="/new-listing" component={CreateListing} />
-                  </Switch>
-            </div>
-        </Router>
+        <Container>
+          <Col lg="2"></Col>
+          <Col lg="6">
+          <Router>
+              <div className="routes">
+                    <Navbar />
+                    <Switch>
+                        <Route exact path="/" component={ListingContainer} />
+                        <Route path="/home" component={Home} />
+                        <Route path="/about" component={About} />
+                        <Route path="/new-listing" component={ListingInput2} />
+                    </Switch>
+              </div>
+          </Router>
+          </Col>
+          <Col lg="2"></Col>
+        </Container>
       </div>
     );
   }

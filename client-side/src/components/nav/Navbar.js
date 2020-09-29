@@ -26,7 +26,14 @@ const NavBar = () => {
           activeStyle={{
             color: 'black'
           }}
-        > All listings </NavLink>
+        > All listings </NavLink> |
+
+        <NavLink
+          to="/new-listing"
+          activeStyle={{
+            color: 'black'
+          }}
+        > New Listing </NavLink>
     </div>
 
   )
