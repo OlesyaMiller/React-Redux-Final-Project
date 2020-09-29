@@ -25,6 +25,7 @@ class ListingInput extends Component {
     }
 
     handleOnChange = (event) => {
+        // debugger
         this.setState({
             ...this.state,
             [event.target.name]: event.target.value 
@@ -40,14 +41,6 @@ class ListingInput extends Component {
         this.props.addListing(this.state)
         // this.setState({}) reset the form
     }
-    // <Form>
-    // <Form.Group controlId="formBasicEmail">
-    //   <Form.Label>Email address</Form.Label>
-    //   <Form.Control type="email" placeholder="Enter email" />
-    //   <Form.Text className="text-muted">
-    //     We'll never share your email with anyone else.
-    //   </Form.Text>
-    // </Form.Group>
 
     render() {
         return (
@@ -92,6 +85,7 @@ class ListingInput extends Component {
                     {this.props.locations.map(location => 
                         {return <Form.Control as="select" name="location_id" 
                                         onChange={this.handleOnChange}>
+                                        <option value="select">Select</option>    
                                         <option value={location.id}>{location.name}</option>
                                 </Form.Control>
                         }

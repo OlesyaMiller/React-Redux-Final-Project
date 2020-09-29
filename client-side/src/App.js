@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Container>
           <Col lg="2"></Col>
-          <Col lg="6">
+          <Col lg={{ span: 8, offset: 2 }}>
           <Router>
               <div className="routes">
                     <Navbar />

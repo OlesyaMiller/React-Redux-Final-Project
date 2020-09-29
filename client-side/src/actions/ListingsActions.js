@@ -10,6 +10,7 @@ export const fetchListings = () => {
 }
 
 export const addListing = (listing) => {
+    console.log(listing, 'listing')
     return (dispatch) => {
         fetch('http://localhost:3000/listings', {
             method: 'POST',
@@ -18,7 +19,7 @@ export const addListing = (listing) => {
         }).then(response => {
             return response.json()
         }).then(responseJSON => {
-            console.log(responseJSON, 'add-listing')
+            // console.log(responseJSON, 'add-listing')
             dispatch({ type: 'ADD_LISTING', listing: responseJSON })
         })
     }

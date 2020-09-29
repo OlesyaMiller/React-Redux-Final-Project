@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     end
 
     def create 
-        byebug
+        # byebug
         listing = Listing.new(listing_params)
         # location = Location.find(params[:location_id])
         if listing.save
