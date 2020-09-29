@@ -20,13 +20,13 @@ class App extends Component {
             <div className="routes">
                   <Navbar />
                   <Switch>
-                    <Route exact path="/" component={ListingContainer} />
-                    <Route path="/home" component={Home} />
-                    <Route path="/about" component={About} />
+                      <Route exact path="/" component={ListingContainer} />
+                      <Route path="/home" component={Home} />
+                      <Route path="/about" component={About} />
+                      <Route path="/new-listing" component={CreateListing} />
                   </Switch>
             </div>
         </Router>
-        {/* <ListingContainer /> */}
       </div>
     );
   }
