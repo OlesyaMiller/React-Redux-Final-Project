@@ -14,7 +14,7 @@ export const addListing = (listing) => {
         fetch('http://localhost:3000/listings', {
             method: 'POST',
             body: JSON.stringify(listing),
-            headers: {"Content-Type": "applicatin/json"}
+            headers: {"Content-Type": "application/json"}
         }).then(response => {
             return response.json()
         }).then(responseJSON => {

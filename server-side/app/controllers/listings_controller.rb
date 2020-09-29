@@ -7,9 +7,9 @@ class ListingsController < ApplicationController
     def create 
         byebug
         listing = Listing.new(listing_params)
-        location = Location.find(params[:location_id])
+        # location = Location.find(params[:location_id])
         if listing.save
-            listing.location = location
+            # listing.location = location
             render json: listing
         else
             render json: { message: listing.errors }, status: 400

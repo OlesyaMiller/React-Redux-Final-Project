@@ -7,15 +7,15 @@ class ListingInput extends Component {
     state = {
         title: "",
         description: "",
-        pets_allowed: "",
+        pets_allowed: true,
         img_url: "",
-        air_conditioning: "",
+        air_conditioning: true,
         guests: "",
         bedrooms: "",
         beds: "",
         baths: "",
-        kitchen: "",
-        wifi: "",
+        kitchen: true,
+        wifi: true,
         location_id: ""
     }
 
@@ -25,12 +25,14 @@ class ListingInput extends Component {
 
     handleOnChange = (event) => {
         this.setState({
+            ...this.state,
             [event.target.name]: event.target.value 
         })
     }
 
     selectHandler = event => {
-        this.setState({[event.target.name]: JSON.parse(event.target.value)})
+        // debugger
+        this.setState({...this.state, [event.target.name]: JSON.parse(event.target.value)})
     }
 
     handleOnSubmit = (event) => {
@@ -48,31 +50,28 @@ class ListingInput extends Component {
                     <label>Description</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.description} name="description"/>
                     <label>Pets allowed:</label>
-                    <select onChange={this.selectHandler}>
-                        <option value='true' name="petsAllowed">Yes</option>
-                        <option value='false' name="petsAllowed">No</option>
+                    <select name="pets_allowed" onChange={this.selectHandler}>
+                        <option value='true' >Yes</option>
+                        <option value='false' >No</option>
                     </select>
                     <label>Air consitioning:</label>
-                    <select onChange={this.selectHandler}>
-                        <option value='true' name="airConditioning">Yes</option>
-                        <option value='false' name="airConditioning">No</option>
+                    <select name="air_conditioning" onChange={this.selectHandler}>
+                        <option value='true' name="air_conditioning">Yes</option>
+                        <option value='false' name="air_conditioning">No</option>
                     </select>
                     <label>WiFi:</label>
-                    <select onChange={this.selectHandler}>
+                    <select name="wifi" onChange={this.selectHandler}>
                         <option value='true' name="wifi">Yes</option>
                         <option value='false' name="wifi">No</option>
                     </select>
                     <label>Kitchen:</label>
-                    <select onChange={this.selectHandler}>
+                    <select name="kitchen" onChange={this.selectHandler}>
                         <option value='true' name="kitchen">Yes</option>
                         <option value='false' name="kitchen">No</option>
                     </select>
                     <label>Location:</label>
-                    <select onChange={this.handleOnChange}>
-                        <option value='1' name="location_id">San Juan</option>
-                    </select>
                     <label>Image url:</label>
-                    <input type="text" onChange={this.handleOnChange} value={this.state.imgUrl} name="imgUrl"/>
+                    <input type="text" onChange={this.handleOnChange} value={this.state.img_url} name="img_url"/>
                     <label>Number of guests:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.guests} name="guests"/>
                     <label>Number of bedrooms:</label>
@@ -81,9 +80,13 @@ class ListingInput extends Component {
                     <input type="text" onChange={this.handleOnChange} value={this.state.beds} name="beds"/>
                     <label>Number of baths:</label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.baths} name="baths"/>
-                    <select onChange={this.handleOnChange}>
-                        {this.props.locations.map(location => {return <option value={location.id} name="location">{location.name}</option>})}
-                    </select>
+
+                    <label>City</label>
+                    {this.props.locations.map(location => 
+                        {return <select name="location_id" 
+                                        onChange={this.handleOnChange}>
+                                        <option value={location.id}>{location.name}</option>
+                                </select>})}
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
