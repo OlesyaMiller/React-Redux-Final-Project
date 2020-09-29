@@ -11,7 +11,7 @@ class ListingContainer extends Component {
                 <ListingInput />
                 <Listings listings={this.props.listings} />
             </div>
-        );
+        )
     }
 }
 

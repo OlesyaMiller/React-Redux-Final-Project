@@ -86,7 +86,9 @@ class ListingInput extends Component {
                         {return <select name="location_id" 
                                         onChange={this.handleOnChange}>
                                         <option value={location.id}>{location.name}</option>
-                                </select>})}
+                                </select>
+                        }
+                    )}
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
