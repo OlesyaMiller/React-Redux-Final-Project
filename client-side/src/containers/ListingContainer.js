@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
 import Listings from '../components/listings/Listings'
-import { fetchLocations } from '../actions/LocationsActions';
+import SearchField from '../components/listings/SearchField'
 import { connect } from 'react-redux';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'
+import ListingShow from '../components/listings/ListingShow'
+import { Route, Switch } from 'react-router-dom'
 
 class ListingContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchLocations()
-    }
-
     render() {
-        console.log(this.props.listings, 'listings container')
         return (
             <div>
-                {this.props.locations.map(location => 
-                        {return <Form.Control as="select" name="location_id" 
-                                        onChange={this.handleOnChange}>
-                                        <option value={location.id}>{location.name}</option>
-                                </Form.Control>
-                        }
-                    )}
-                <Button type="submit">Search</Button>
-                <Listings listings={this.props.listings} />
+                <SearchField />
+                <Switch>
+                    <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={this.props.listings}/>} />
+                    <Route path="/listings" render={() => 
+                        <Listings listings={this.props.listings}/>} 
+                    />
+                </Switch>    
             </div>
         )
     }
@@ -31,9 +24,8 @@ class ListingContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-      listings: state.listings,
-      locations: state.locations
+      listings: state.listings
     }
 }
 
-export default connect(mapStateToProps, { fetchLocations })(ListingContainer);
+export default connect(mapStateToProps)(ListingContainer);

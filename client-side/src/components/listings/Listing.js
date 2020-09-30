@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
 import Image from 'react-bootstrap/Image'
+import { Link } from 'react-router-dom'
+import React from 'react'
+import ReviewsContainer from '../containers/ReviewsContainer'
 
-class Listing extends Component {
-    render() {
+const Listing = ({listing}) => {
         return (
             <div>
-                <Image style={{ width: '18rem' }} src={this.props.listing.img_url} alt={this.props.listing.title}/>
-                <p>{this.props.listing.title}</p> 
-                <strong>{this.props.listing.location.name}</strong>
+                <Link to={`/listings/${listing.id}`}>
+                    <Image style={{ width: '18rem' }} src={listing.img_url} alt={listing.title}/>
+                    <p>{listing.title}</p> 
+                    <strong>{listing.location.name}</strong>
+                </Link>
+
+                <ReviewsContainer />
             </div>
         );
-    }
 }
 
 export default Listing;

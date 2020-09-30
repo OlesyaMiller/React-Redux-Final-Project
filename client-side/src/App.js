@@ -9,6 +9,7 @@ import About from './components/nav/About'
 import ListingInput2 from './components/listings/ListingInput2'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
+import Listings from './components/listings/Listings';
 
 class App extends Component {
 
@@ -26,10 +27,11 @@ class App extends Component {
               <div className="routes">
                     <Navbar />
                     <Switch>
-                        <Route exact path="/" component={ListingContainer} />
-                        <Route path="/home" component={Home} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
                         <Route path="/new-listing" component={ListingInput2} />
+                        {/* <Route path="/listings" component={ListingContainer} /> */}
+                        <ListingContainer />
                     </Switch>
               </div>
           </Router>

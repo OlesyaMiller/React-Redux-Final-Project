@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
         <NavLink
-            to="/home"
+            to="/"
             exact
             activeStyle={{
                 color: 'black'
@@ -22,7 +22,7 @@ const NavBar = () => {
         </NavLink> |
 
         <NavLink
-          to="/"
+          to="/listings"
           activeStyle={{
             color: 'black'
           }}
