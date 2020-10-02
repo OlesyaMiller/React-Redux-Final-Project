@@ -13,7 +13,7 @@ class ListingContainer extends Component {
                 <SearchField />
                 <Switch>
                     <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={this.props.listings}/>} />
-                    <Route path="/listings" render={() => 
+                    <Route exact path="/listings" render={() => 
                         <Listings listings={this.props.listings}/>} 
                     />
                 </Switch>    

@@ -1,4 +1,4 @@
-export const fetchListings = () => {
+export const fetchListings = () => { //cannot use export default with arrow functions
     return (dispatch) => {
         fetch('http://localhost:3000/listings').then(response => {
             return response.json()

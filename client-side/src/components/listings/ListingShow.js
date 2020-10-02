@@ -1,16 +1,17 @@
 import React from 'react';
+import ReviewsContainer from '../../containers/ReviewsContainer'
+import { withRouter } from 'react-router-dom'
 
-const ListingShow = ({ listings, match }) => {
+const ListingShow = ({ listings, match, history }) => {
 
     const listing = listings.find(listing => listing.id === parseInt(match.params.listingId))
 
-    console.log(listing, "list")
     return (
         <div>
-            <h2>{listing.title}</h2>
-            show 
+            <h2>{listing.title}</h2> 
+            <ReviewsContainer listing={listing}/>
         </div>
     );
 };
 
-export default ListingShow;
+export default withRouter(ListingShow);

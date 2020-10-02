@@ -1,7 +1,6 @@
 import Image from 'react-bootstrap/Image'
 import { Link } from 'react-router-dom'
 import React from 'react'
-import ReviewsContainer from '../containers/ReviewsContainer'
 
 const Listing = ({listing}) => {
         return (
@@ -11,8 +10,6 @@ const Listing = ({listing}) => {
                     <p>{listing.title}</p> 
                     <strong>{listing.location.name}</strong>
                 </Link>
-
-                <ReviewsContainer />
             </div>
         );
 }
