@@ -16,6 +16,7 @@ class SearchField extends Component {
                 {this.props.locations.map(location => 
                         {return <Form.Control as="select" name="location_id" 
                                         onChange={this.handleOnChange}>
+                                        <option>Select City</option>    
                                         <option value={location.id}>{location.name}</option>
                                 </Form.Control>
                         }

@@ -32,7 +32,6 @@ class ReviewInput extends Component {
                         Submit
                     </Button>
                 </Form>
-                review input 
             </div>
         );
     }

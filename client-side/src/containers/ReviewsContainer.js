@@ -14,11 +14,11 @@ class ReviewsContainer extends Component {
         console.log(this.props.reviews, 'review props container')
         return (
             <div>
-                <ReviewInput addReview={this.props.addReview} listingId={this.props.listing.id} />
                 <Reviews 
                     reviews={this.props.reviews}
                     listingId={this.props.listing.id}
                 />
+                <ReviewInput addReview={this.props.addReview} listingId={this.props.listing.id} />
             </div>
         );
     }

@@ -10,7 +10,6 @@ class ListingContainer extends Component {
     render() {
         return (
             <div>
-                <SearchField />
                 <Switch>
                     <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={this.props.listings}/>} />
                     <Route exact path="/listings" render={() => 
