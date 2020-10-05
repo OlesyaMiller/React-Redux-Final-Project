@@ -7,15 +7,19 @@ import {
 import React from "react"
 
 const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-  console.log(props.latitude, 'latitude')
-  // <GoogleMap
-  //   defaultZoom={8}
-  //   defaultCenter={{ lat: props.latitude, lng: props.longitude }}
-  // >
-  //   { props.isMarkerShown && <Marker 
-  //     position={{ lat: props.latitude, lng: props.longitude }}
-  //   />}
-  // </GoogleMap>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: parseFloat(props.latitude), lng: parseInt(props.longitude) }}
+    // defaultCenter={{ lat: props.latitude, lng: props.longitude }}
+  >
+    {console.log(props, 'map props')}
+
+    { props.isMarkerShown && <Marker 
+      position={{ lat: parseFloat(props.latitude), lng: parseInt(props.longitude) }}
+      // position={{ lat: props.latitude, lng: props.longitude }}
+    />}
+  </GoogleMap>
+
 ));
   
   export default MapWithAMarker 
