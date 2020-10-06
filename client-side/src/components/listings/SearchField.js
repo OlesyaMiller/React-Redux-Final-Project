@@ -13,14 +13,14 @@ class SearchField extends Component {
     render() {
         return (
             <div>
-                {this.props.locations.map(location => 
-                        {return <Form.Control as="select" name="location_id" 
+                <Form.Control as="select" name="location_id" 
                                         onChange={this.handleOnChange}>
-                                        <option>Select City</option>    
-                                        <option value={location.id}>{location.name}</option>
-                                </Form.Control>
-                        }
+                                        <option>Select City</option> 
+                {this.props.locations.map(location => 
+                        {return <option value={location.id}>{location.name}</option>}
                 )}
+                </Form.Control>
+                
                 <Button type="submit">Search</Button>
             </div>
         );

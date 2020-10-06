@@ -62,7 +62,9 @@ class ListingInput extends Component {
                     <Form.Label>Title:</Form.Label>
                     <Form.Control type="text" onChange={this.handleOnChange} value={this.state.title} name="title"/>
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" onChange={this.handleOnChange} value={this.state.description} name="description"/>
+                    <Form.Group>
+                        <Form.Control as="textarea" type="text" onChange={this.handleOnChange} value={this.state.description} name="description"/>
+                    </Form.Group>
                     <Form.Label>Pets allowed:</Form.Label>
                     <Form.Control as="select" name="pets_allowed" onChange={this.selectHandler}>
                         <option value='true' >Yes</option>
@@ -95,14 +97,14 @@ class ListingInput extends Component {
                     <Form.Control type="text" onChange={this.handleOnChange} value={this.state.baths} name="baths"/>
 
                     <Form.Label>City</Form.Label>
-                    {this.props.locations.map(location => 
-                        {return <Form.Control as="select" name="location_id" 
+                    <Form.Control as="select" name="location_id" 
                                         onChange={this.handleOnChange}>
-                                        <option value="select">Select</option>    
-                                        <option value={location.id}>{location.name}</option>
-                                </Form.Control>
+                                        <option value="select">Select</option>  
+                    {this.props.locations.map(location => 
+                        {return <option value={location.id}>{location.name}</option>
                         }
                     )}
+                    </Form.Control>
                     <input type="submit" value="Submit"/>
                 </Form>
             </div>
