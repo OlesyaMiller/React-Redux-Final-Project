@@ -2,6 +2,8 @@ import React from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import Image from 'react-bootstrap/Image'
 import MapWithAMarker from './ListingMap'
+import ListingMap2 from './ListingMap2'
+import Listings from './Listings';
 
 const ListingShow = ({ listings, match }) => {
 
@@ -24,7 +26,7 @@ const ListingShow = ({ listings, match }) => {
             <h5>Write your review here:</h5>
             <ReviewsContainer listing={listing}/>
     
-            <MapWithAMarker
+            {/* <MapWithAMarker
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
 
@@ -33,7 +35,9 @@ const ListingShow = ({ listings, match }) => {
                 mapElement={<div style={{ height: `100%` }} />}
                 latitude={listing.location.latitude}
                 longitude={listing.location.longitude}
-            />
+            /> */}
+            <ListingMap2 latitude={listing.location.latitude}
+                         longitude={listing.location.longitude}/>
         </div>
     );
 };
