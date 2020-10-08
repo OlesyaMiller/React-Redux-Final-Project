@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
   width: '100%',
-  height: '100%'
+  height: '60%'
 };
 
 export class MapContainer extends Component {
@@ -44,7 +44,7 @@ export class MapContainer extends Component {
         }>
             <Marker
           onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
+          name={this.props.listing.location.name}
         />
         <InfoWindow
           marker={this.state.activeMarker}

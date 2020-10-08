@@ -9,6 +9,7 @@ import About from './components/nav/About'
 import ListingInput from './components/listings/ListingInput'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
+// import './index.css'
 
 class App extends Component {
 

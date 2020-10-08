@@ -10,7 +10,7 @@ const ListingShow = ({ listings, match }) => {
     if (listings.length === 0) return null; //stops the component from re-rendering
 
     const listing = listings.find(listing => listing.id === parseInt(match.params.listingId))
-    
+    console.log(match, "match")
     return (
         <div>
             <h2>{listing.title}</h2> 
@@ -26,18 +26,10 @@ const ListingShow = ({ listings, match }) => {
             <h5>Write your review here:</h5>
             <ReviewsContainer listing={listing}/>
     
-            {/* <MapWithAMarker
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                loadingElement={<div style={{ height: `100%` }} />}
-
-                isMarkerShown
-                containerElement={<div style={{ height: `400px` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
-                latitude={listing.location.latitude}
-                longitude={listing.location.longitude}
-            /> */}
             <ListingMap2 latitude={listing.location.latitude}
-                         longitude={listing.location.longitude}/>
+                         longitude={listing.location.longitude}
+                         listing={listing}
+            />
         </div>
     );
 };

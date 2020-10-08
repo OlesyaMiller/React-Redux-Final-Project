@@ -1,6 +1,4 @@
 export const addReview = (review) => {
-    // debugger
-    console.log(review, 'review')
     return (dispatch) => {
         fetch('http://localhost:3000/reviews', {
             method: 'POST',

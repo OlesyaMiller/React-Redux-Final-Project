@@ -7,8 +7,7 @@ import { connect } from 'react-redux';
 class ReviewInput extends Component {
 
     state = {
-        content: "",
-        // listing_id: ""
+        content: ""
     }
     
     handleOnChange = (e) => {
@@ -20,7 +19,7 @@ class ReviewInput extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         this.props.addReview({content: this.state.content, listingId: this.props.listingId })
-        // this.setState({}) reset the form
+        this.setState({ content: "" }) 
     }
 
     render() {

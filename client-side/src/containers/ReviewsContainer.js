@@ -11,7 +11,7 @@ class ReviewsContainer extends Component {
     }
 
     render() {
-        console.log(this.props.reviews, 'review props container')
+        console.log(this.props, 'list id')
         return (
             <div>
                 <ReviewInput addReview={this.props.addReview} listingId={this.props.listing.id} />

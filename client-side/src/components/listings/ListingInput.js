@@ -25,7 +25,6 @@ class ListingInput extends Component {
     }
 
     handleOnChange = (event) => {
-        // debugger
         this.setState({
             ...this.state,
             [event.target.name]: event.target.value 
@@ -101,8 +100,8 @@ class ListingInput extends Component {
                                         onChange={this.handleOnChange}>
                                         <option value="select">Select</option>  
                     {this.props.locations.map(location => 
-                        {return <option value={location.id}>{location.name}</option>
-                        }
+                        {return <option value={location.id}>{location.name}</option>}
+                        // {return <option value={location.id}>{location.city}</option>}
                     )}
                     </Form.Control>
                     <input type="submit" value="Submit"/>
