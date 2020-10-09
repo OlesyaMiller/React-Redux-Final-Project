@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Form from 'react-bootstrap/Form';
+import React, { Component } from 'react'
+import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { addReview } from '../../actions/ReviewsActions'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
 class ReviewInput extends Component {
 
@@ -17,7 +17,7 @@ class ReviewInput extends Component {
     }
 
     handleOnSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         this.props.addReview({content: this.state.content, listingId: this.props.listingId })
         this.setState({ content: "" }) 
     }

@@ -12,17 +12,18 @@ const NavBar = () => {
             }}
             >Home
         </NavLink> |
-
+{/* 
         <NavLink
             to="/about"
             activeStyle={{
                 color: 'black'
             }}
             > About 
-        </NavLink> |
+        </NavLink> | */}
 
         <NavLink
           to="/listings"
+          exact 
           activeStyle={{
             color: 'black'
           }}

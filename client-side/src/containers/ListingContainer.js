@@ -10,11 +10,13 @@ class ListingContainer extends Component {
         return (
             
             <div>
-                <Switch>
+                <Switch> {/* makes sure there is no overlapping */}
                     <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={this.props.listings}/>} />
-                    <Route exact path="/listings" render={() => 
+                    <Route exact path="/listings" render={() =>  
                         <Listings listings={this.props.listings}/>} 
                     />
+                    {/* we have to use render instead of component in /listings route */}
+                    {/* to be able to pass it the props */}
                 </Switch>    
             </div>
         )
