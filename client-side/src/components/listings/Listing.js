@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 
 const Listing = ({listing}) => {
+    console.log(listing, 'listing comp')
         return (
             <div>
                 <Link to={`/listings/${listing.id}`}>
                     <Image style={{ width: '18rem' }} src={listing.img_url} alt={listing.title}/>
-                    <h4>{listing.title}</h4> <strong>{listing.location.city}</strong>
+                    <h4>{listing.title}</h4> <strong>{listing.location.name}</strong>
                     <br/>
                 </Link>
             </div>

@@ -101,7 +101,6 @@ class ListingInput extends Component {
                                         <option value="select">Select</option>  
                     {this.props.locations.map(location => 
                         {return <option value={location.id}>{location.name}</option>}
-                        // {return <option value={location.id}>{location.city}</option>}
                     )}
                     </Form.Control>
                     <input type="submit" value="Submit"/>

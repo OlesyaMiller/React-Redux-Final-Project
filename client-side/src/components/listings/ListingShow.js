@@ -3,7 +3,6 @@ import ReviewsContainer from '../../containers/ReviewsContainer'
 import Image from 'react-bootstrap/Image'
 import MapWithAMarker from './ListingMap'
 import ListingMap2 from './ListingMap2'
-import Listings from './Listings';
 
 const ListingShow = ({ listings, match }) => {
 
