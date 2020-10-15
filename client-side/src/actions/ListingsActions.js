@@ -19,7 +19,6 @@ export const addListing = (listing) => {
         }).then(response => {
             return response.json()
         }).then(responseJSON => {
-            // console.log(responseJSON, 'add-listing')
             dispatch({ type: 'ADD_LISTING', listing: responseJSON })
         })
     }

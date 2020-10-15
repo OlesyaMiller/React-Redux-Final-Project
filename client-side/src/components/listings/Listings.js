@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Listing from './Listing'
-import SearchField from './SearchField'
 
 class Listings extends Component {
     render() {

@@ -42,7 +42,7 @@ export class MapContainer extends Component {
             lng: parseFloat(this.props.longitude)
           }
         }>
-            <Marker
+        <Marker
           onClick={this.onMarkerClick}
           name={this.props.listing.location.name}
         />

@@ -1,15 +1,14 @@
-import React from 'react';
+import React from 'react'
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import Image from 'react-bootstrap/Image'
-import MapWithAMarker from './ListingMap'
 import ListingMap2 from './ListingMap2'
 
 const ListingShow = ({ listings, match }) => {
-
+    
     if (listings.length === 0) return null; //stops the component from re-rendering
 
-    const listing = listings.find(listing => listing.id === parseInt(match.params.listingId))
-    console.log(match, "match")
+    const listing = listings.find(listing => listing.id === parseInt(match.params.listingId)) //params come from the url
+    
     return (
         <div>
             <h2>{listing.title}</h2> 

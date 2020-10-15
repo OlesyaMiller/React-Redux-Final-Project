@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 
 const Listing = ({listing}) => {
-    console.log(listing, 'listing comp')
+    
         return (
             <div>
                 <Link to={`/listings/${listing.id}`}>
