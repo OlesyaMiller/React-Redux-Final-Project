@@ -1,7 +1,7 @@
 import React from 'react'
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import Image from 'react-bootstrap/Image'
-import ListingMap2 from './ListingMap2'
+import ListingMap from './ListingMap'
 
 const ListingShow = ({ listings, match }) => {
     
@@ -24,7 +24,7 @@ const ListingShow = ({ listings, match }) => {
             <h5>Write your review here:</h5>
             <ReviewsContainer listing={listing}/>
     
-            <ListingMap2 latitude={listing.location.latitude}
+            <ListingMap latitude={listing.location.latitude}
                          longitude={listing.location.longitude}
                          listing={listing}
             />

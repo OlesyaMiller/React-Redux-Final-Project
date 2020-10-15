@@ -7,7 +7,7 @@ export const addReview = (review) => {
         }).then(response => {
             return response.json()
         }).then(responseJSON => {
-            dispatch({ type: 'ADD_REVIEW', review: responseJSON })
+            dispatch({ type: 'ADD_REVIEW', payload: responseJSON })
         })
     }
 }
@@ -17,8 +17,7 @@ export const fetchReviews = () => {
         fetch('http://localhost:3000/reviews').then(response => {
             return response.json()
         }).then(data => {
-            // console.log(data, 'location data'),
-            dispatch({ type: 'FETCH_REVIEWS', reviews: data })
+            dispatch({ type: 'FETCH_REVIEWS', payload: data })
         })
     }
 }

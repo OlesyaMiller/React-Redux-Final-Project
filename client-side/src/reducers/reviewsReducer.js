@@ -1,10 +1,9 @@
 export default function reviewsReducer(state = [], action) {
     switch (action.type) {
     case 'ADD_REVIEW':
-        const review = { content: action.review.content, listingId: action.review.listingId };
-        return [...state, action.review ]
+        return [...state, action.payload ]
     case 'FETCH_REVIEWS':
-            return action.reviews
+            return action.payload
         default:
             return state;        
     }

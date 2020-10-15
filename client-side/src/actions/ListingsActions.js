@@ -3,14 +3,12 @@ export const fetchListings = () => { //cannot use export default with arrow func
         fetch('http://localhost:3000/listings').then(response => {
             return response.json()
         }).then(data => {
-            console.log(data, 'listings data')
-            dispatch({ type: 'FETCH_LISTINGS', listings: data })
+            dispatch({ type: 'FETCH_LISTINGS', payload: data })
         })
     }
 }
 
 export const addListing = (listing) => {
-    console.log(listing, 'listing')
     return (dispatch) => {
         fetch('http://localhost:3000/listings', {
             method: 'POST',
@@ -19,7 +17,7 @@ export const addListing = (listing) => {
         }).then(response => {
             return response.json()
         }).then(responseJSON => {
-            dispatch({ type: 'ADD_LISTING', listing: responseJSON })
+            dispatch({ type: 'ADD_LISTING', payload: responseJSON })
         })
     }
 }
