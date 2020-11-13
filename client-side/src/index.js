@@ -12,9 +12,9 @@ const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router> {/* gives the component access to router */}
+    {/* <Router> gives the component access to router */}
       <App />
-    </Router> 
+    {/* </Router>  */}
   </Provider>,
   document.getElementById('root')
 );

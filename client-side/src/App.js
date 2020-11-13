@@ -24,7 +24,7 @@ class App extends Component {
           <Router>
               <div className="routes">
                     <Navbar />
-                    <Switch>
+                    <Switch> {/*returns only the first matching route rather than all matching routes*/}
                         <Route exact path="/" component={Home} />
                         <Route path="/new-listing" component={ListingInput} />
                         <ListingContainer />

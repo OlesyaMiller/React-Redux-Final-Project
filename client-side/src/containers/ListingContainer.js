@@ -7,15 +7,15 @@ import { Route } from 'react-router-dom'
 class ListingContainer extends Component {
 
     render() {
+        const {listings} = this.props 
+
         return (
+
             <div>
-                <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={this.props.listings}/>} />
+                <Route path="/listings/:listingId" render={routerProps => <ListingShow {...routerProps} listings={listings}/>} />
                 <Route exact path="/listings" render={() =>  
-                    <Listings listings={this.props.listings}/>} 
+                    <Listings listings={listings}/>} 
                 />
-                {/* we have to use render instead of component in /listings route */}
-                {/* to be able to pass it the props */}
-                {/* routerProps contain information about the url */}
             </div>
         )
     }

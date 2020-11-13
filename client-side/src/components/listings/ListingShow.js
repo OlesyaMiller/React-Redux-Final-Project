@@ -5,9 +5,9 @@ import ListingMap from './ListingMap'
 
 const ListingShow = ({ listings, match }) => {
     
-    if (listings.length === 0) return null; //stops the component from re-rendering
+    if (listings.length === 0) return null; 
 
-    const listing = listings.find(listing => listing.id === parseInt(match.params.listingId)) //params come from the url
+    const listing = listings.find(listing => listing.id === parseInt(match.params.listingId)) 
     
     return (
         <div>
@@ -25,8 +25,8 @@ const ListingShow = ({ listings, match }) => {
             <ReviewsContainer listing={listing}/>
     
             <ListingMap latitude={listing.location.latitude}
-                         longitude={listing.location.longitude}
-                         listing={listing}
+                        longitude={listing.location.longitude}
+                        listing={listing}
             />
         </div>
     );

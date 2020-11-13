@@ -2,8 +2,8 @@ export const fetchListings = () => { //cannot use export default with arrow func
     return (dispatch) => {
         fetch('http://localhost:3000/listings').then(response => {
             return response.json()
-        }).then(data => {
-            dispatch({ type: 'FETCH_LISTINGS', payload: data })
+        }).then(listings => {
+            dispatch({ type: 'FETCH_LISTINGS', payload: listings })
         })
     }
 }
@@ -16,8 +16,8 @@ export const addListing = (listing) => {
             headers: {"Content-Type": "application/json"}
         }).then(response => {
             return response.json()
-        }).then(responseJSON => {
-            dispatch({ type: 'ADD_LISTING', payload: responseJSON })
+        }).then(listing => {
+            dispatch({ type: 'ADD_LISTING', payload: listing })
         })
     }
 }

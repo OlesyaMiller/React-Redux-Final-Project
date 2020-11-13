@@ -14,6 +14,15 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy 
+        @review = Review.find_by(id: params[:id])
+        if @review.destroy
+            render status: 204
+        else
+            render json: { message: "Unsuccessful Delete" }, status: 400
+        end
+    end
+
     private 
 
     def review_params

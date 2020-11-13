@@ -1,0 +1,25 @@
+export const removeReview = (review) => {
+    return {
+        type: 'REMOVE_REVIEW',
+        payload: review
+    };
+}
+
+export const deleteReview = (review) => {
+    return (dispatch) => {
+        dispatch(removeReview(review));
+        fetch(`http://localhost:3000/reviews/${review.id}`, {
+            method: 'DELETE',
+            body: JSON.stringify(review),
+            headers: {"Content-Type": "application/json"}
+        }).then(response => {
+            return response
+        })
+    }
+}
+
+  removeReview = () => {
+        this.props.deleteReview(this.props.review)
+    }
+
+    <button onClick={this.removeReview}>Delete review</button>

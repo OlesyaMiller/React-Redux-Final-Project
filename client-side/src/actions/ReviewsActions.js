@@ -6,8 +6,8 @@ export const addReview = (review) => {
             headers: {"Content-Type": "application/json"}
         }).then(response => {
             return response.json()
-        }).then(responseJSON => {
-            dispatch({ type: 'ADD_REVIEW', payload: responseJSON })
+        }).then(review => {
+            dispatch({ type: 'ADD_REVIEW', payload: review })
         })
     }
 }
@@ -16,8 +16,9 @@ export const fetchReviews = () => {
     return (dispatch) => {
         fetch('http://localhost:3000/reviews').then(response => {
             return response.json()
-        }).then(data => {
-            dispatch({ type: 'FETCH_REVIEWS', payload: data })
+        }).then(reviews => {
+            dispatch({ type: 'FETCH_REVIEWS', payload: reviews })
         })
     }
 }
+

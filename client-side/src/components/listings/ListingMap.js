@@ -9,9 +9,9 @@ const mapStyles = {
 export class MapContainer extends Component {
 
   state = {
-    showingInfoWindow: false,  // Hides or shows the InfoWindow
-    activeMarker: {},          // Shows the active marker upon click
-    selectedPlace: {}          // Shows the InfoWindow to the selected place upon a marker
+    showingInfoWindow: false,  
+    activeMarker: {},          
+    selectedPlace: {}          
   };
 
   onMarkerClick = (props, marker, e) =>
@@ -31,20 +31,22 @@ export class MapContainer extends Component {
   };
 
   render() {
+    const { latitude, longitude, listing: {location}, google} = this.props 
+
     return (
       <Map
-        google={this.props.google}
+        google={google}
         zoom={14}
         style={mapStyles}
         initialCenter={
           {
-            lat: parseFloat(this.props.latitude),
-            lng: parseFloat(this.props.longitude)
+            lat: parseFloat(latitude),
+            lng: parseFloat(longitude)
           }
         }>
         <Marker
           onClick={this.onMarkerClick}
-          name={this.props.listing.location.name}
+          name={location.name}
         />
         <InfoWindow
           marker={this.state.activeMarker}
