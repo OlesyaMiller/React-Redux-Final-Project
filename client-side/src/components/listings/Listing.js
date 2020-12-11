@@ -8,7 +8,7 @@ class Listing extends Component {
         likes: 0
     }
     
-    chandeOnClick = () => {
+    changeOnClick = () => {
         this.setState({
             likes: this.state.likes + 1
         })
@@ -24,7 +24,7 @@ class Listing extends Component {
                     <h4>{title}</h4> <strong>{location.name}</strong>
                     <br/>
                 </Link>
-                <button onClick={this.chandeOnClick}>Like</button>
+                <button onClick={this.changeOnClick}>Like</button>
                 <p>Likes: {this.state.likes}</p>
             </div>
         );
