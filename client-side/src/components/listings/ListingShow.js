@@ -14,6 +14,7 @@ const ListingShow = ({ listings, match }) => {
             <h2>{listing.title}</h2> 
             <Image style={{ width: '18rem' }} src={listing.img_url} alt={listing.title}/>
             <br/>
+            
             <p>Description:{listing.description}</p>
             <p>Pets allowed: {listing.pets_allowed === true ? <span>Yes</span> : <span>No</span>}</p>
             <p>Air Conditioning: {listing.air_conditioning === true ? <span>Yes</span> : <span>No</span>}</p>
