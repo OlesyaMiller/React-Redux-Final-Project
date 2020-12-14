@@ -28,7 +28,6 @@ const NavBar = () => {
           }}
         > New Listing </NavLink>
     </div>
-
   )
 }
 
