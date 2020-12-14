@@ -23,7 +23,6 @@ class ReviewsContainer extends Component {
             </div>
         );
     }
-    
 }
 
 const mapStateToProps = state => {
