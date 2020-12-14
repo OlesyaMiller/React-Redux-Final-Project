@@ -1,21 +1,12 @@
 import Image from 'react-bootstrap/Image'
 import { Link } from 'react-router-dom'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-class Listing extends Component {
+const Listing = (props) => {
 
-    state = {
-        likes: 0
-    }
-    
-    changeOnClick = () => {
-        this.setState({
-            likes: this.state.likes + 1
-        })
-    }
-
-    render(){
-        const { listing: {id, img_url, location, title } } = this.props  
+    const [likes, setLikes] = useState(0)
+   
+        const { listing: {id, img_url, location, title } } = props  
 
         return (
             <div>
@@ -24,11 +15,10 @@ class Listing extends Component {
                     <h4>{title}</h4> <strong>{location.name}</strong>
                     <br/>
                 </Link>
-                <button onClick={this.changeOnClick}>Like</button>
-                <p>Likes: {this.state.likes}</p>
+                <button onClick={() =>setLikes(likes + 1)}>Like</button>
+                <p>Likes: {likes}</p>
             </div>
         );
-    }
 }
 
 export default Listing;
