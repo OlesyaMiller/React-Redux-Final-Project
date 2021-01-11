@@ -5,7 +5,7 @@ import ListingMap from './ListingMap'
 
 const ListingShow = ({ listings, match }) => {
     
-    if (listings.length === 0) return null; 
+    if (listings.length === 0) return null
 
     const listing = listings.find(listing => listing.id === parseInt(match.params.listingId)) 
     
