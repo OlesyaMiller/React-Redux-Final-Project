@@ -36,4 +36,4 @@ class ReviewInput extends Component {
     }
 }
 
-export default connect(null, { addReview })(ReviewInput);
+export default connect(null, { addReview })(ReviewInput)
