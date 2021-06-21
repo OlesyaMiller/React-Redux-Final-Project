@@ -1,1 +1,4 @@
-# React-Redux-Final-Project
+Airbnb Clone Built with React and Redux
+
+
+This project is a simplified airbnb clone for Puerto Rico. I named it PRairbnb. It lets the user create listings and leave reviews for the listings. My project has two directories - client side and server side. The server side is responsible for handling the data and the client side handles the front-end part of the application. The technologies used for the front end are React and Redux, back end - Ruby on Rails. The app has an integrated Google Maps feature. The latitude and longitude properties come from my Location model in the backend directory. I was able to dynamically create Location instances and assign them the name, latitude and longitude properties in my seeds file by iterating over a local JSON file that contains data for all cities in Puerto Rico. I downloaded that file from simplemaps.com
